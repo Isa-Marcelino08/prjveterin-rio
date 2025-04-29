@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.slide-content {
+    width: 500%;
+    height: auto;
+    display: flex;
+    transition: transform 1s ease;
+}
+
+.slide-content input {
+    display: none;
+}
+
+.slide-box {
+    width: 20%;
+    height: auto;
+    position: relative;
+    text-align: center;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+.slide-box img {
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 
+        10px 10px 30px rgba(0, 0, 0, 0.3),   
+        -10px -10px 30px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-manual, .nav-auto {
+    position: absolute;
+    width: 100%;
+    margin-top: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-manual .manual-btn, .nav-auto div {
+    border: 1px solid #655793;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child) {
+    margin-right: 10px;
+}
+
+.nav-manual .manual-btn:hover {
+    background-color: #655793;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3,
+#radio4:checked ~ .nav-auto .auto-btn4,
+#radio5:checked ~ .nav-auto .auto-btn5 {
+    background-color: #655793;
+}
+
+#radio1:checked ~ .slide-content {
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .slide-content {
+    transform: translateX(-20%);
+}
+
+#radio3:checked ~ .slide-content {
+    transform: translateX(-40%);
+}
+
+#radio4:checked ~ .slide-content {
+    transform: translateX(-60%);
+}
+
+#radio5:checked ~ .slide-content {
+    transform: translateX(-80%);
+}
+
+#prev-btn, #next-btn {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: #F6D325;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+}
+
+#prev-btn:hover, #next-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.148),   
+}
+
+#prev-btn img, #next-btn img {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+}
+
+#prev-btn {
+    margin-top: 16%;
+    left: 10%;
+}
+
+#next-btn {
+    margin-top: 16%;
+    right: 10%;
+}
